@@ -15,13 +15,10 @@ void main() => runApp(MaterialApp(
       backgroundColor: ColorList.grey,
     ),
     body: Center(
-      child: Text(
-        "SmartMavuno",
-        style: TextStyle(fontSize: 40,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 12,
-            color: ColorList.red),
-      ),
+      child: Image(
+        image: NetworkImage('https://www.google.com/search?client=firefox-b-e&q=images#vhid=nwiTKnJXTwcwcM&vssid=l'),
+      )
+
     ),
     floatingActionButton: FloatingActionButton(
       onPressed: () {
