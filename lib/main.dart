@@ -1,120 +1,36 @@
 import 'package:flutter/material.dart';
-// import 'package:fluttertoast/fluttertoast.dart';
 import 'package:simpleapp/Color/colors.dart';
-import 'package:flutter/cupertino.dart';
 
-final unameController = TextEditingController();
-final passController = TextEditingController();
-String uname = "uname";
-String pass = "pass";
-
-void main() => runApp(MaterialApp(
-  home: LoginScreen(),
-));
-
-class LoginScreen extends StatefulWidget {
-  @override
-  _LoginScreenState createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+void main() {
+  runApp(MaterialApp(
+    home: Scaffold(
       appBar: AppBar(
-        title: Text("Login Page"),
+        title: Text('SmartMavuno App'),
         centerTitle: true,
+        backgroundColor: ColorList.grey,
       ),
       body: Center(
-        child: Container(
-          height: 300,
-          width: 200,
-          child: Column(
-            children: [
-              Text("Login"),
-              TextField(
-                controller: unameController,
-                decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.verified_user),
-                  hintText: "Username",
-                ),
-              ),
-              TextField(
-                controller: passController,
-                decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.password),
-                  hintText: "Password",
-                ),
-                obscureText: true,
-              ),
-
-              Container(
-                alignment: Alignment.centerRight,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SignUp()),
-                    );
-                  },
-                  child: Text("Create Account?"),
-                ),
-              ),
-              ElevatedButton(
-                child: Text("Submit"),
-                onPressed: () {
-                  if (uname == unameController.text &&
-                      pass == passController.text) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            Home(username: "Hello World from Login"),
-                      ),
-                    );
-                  } else {
-                    // Fluttertoast.showToast(msg: "Invalid Username or Password");
-                    unameController.text = "";
-                    passController.text = "";
-                  }
-                },
-              ),
-            ],
-          ),
+        child: Text(
+          "SmartMavuno",
+          style: TextStyle(fontSize: 40,
+          fontWeight: FontWeight.bold,
+          letterSpacing: 12,
+          color: ColorList.red),
         ),
       ),
-    );
-  }
-}
-
-class SignUp extends StatelessWidget {
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Add your onPressed code here!
+        },
+        child: Icon(Icons.navigation),
+        backgroundColor: ColorList.grey,
+      ),
+    ),
+  ));
+  class test extends StatelessWidget{
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Sign Up"),
-      ),
-      body: Center(
-        child: Text("Sign Up Page"),
-      ),
-    );
+  Widget build(BuildContext context){
+  return container();
   }
-}
-
-class Home extends StatelessWidget {
-  final String username;
-
-  Home({required this.username});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Home"),
-      ),
-      body: Center(
-        child: Text("Welcome, $username!"),
-      ),
-    );
   }
 }
