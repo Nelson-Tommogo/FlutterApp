@@ -16,7 +16,7 @@ void main() => runApp(MaterialApp(
     ),
     body: Center(
       child: Image(
-        image: AssetImage('images/trial.jpg'),
+        image: AssetImage('assets/trial.jpg'),
       ),
     ),
 
