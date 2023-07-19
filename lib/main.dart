@@ -10,16 +10,16 @@ void main() => runApp(MaterialApp(
   Widget build(BuildContext context){
   return Scaffold(
     appBar: AppBar(
-      title: Text('SmartMavuno App'),
+      title: Text('SmartMavuno'),
       centerTitle: true,
       backgroundColor: ColorList.grey,
     ),
     body: Center(
       child: Image(
-        image: NetworkImage('https://www.google.com/search?client=firefox-b-e&q=images#vhid=nwiTKnJXTwcwcM&vssid=l'),
-      )
-
+        image: AssetImage('images/trial.jpg'),
+      ),
     ),
+
     floatingActionButton: FloatingActionButton(
       onPressed: () {
         // Add your onPressed code here!
